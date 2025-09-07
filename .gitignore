@@ -1,0 +1,21 @@
+# Compilados de Java
+/bin/
+*.class
+
+# Archivos generados de datos
+/data/
+
+# Archivos de configuración de Eclipse
+.classpath
+.project
+.settings/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Otros archivos temporales
+*.log
+
+# Evitar ignorar el README
+!README.md
