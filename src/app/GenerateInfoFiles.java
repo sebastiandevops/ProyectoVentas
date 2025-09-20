@@ -16,8 +16,8 @@ public class GenerateInfoFiles {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         try {
-            GeneradorArchivos.crearArchivoProductos(5, "data/reporte_productos.txt");
-            GeneradorArchivos.crearArchivoVendedores(3, "data/reporte_vendedores.txt");
+            GeneradorArchivos.crearArchivoProductos(5, "data/productos.txt");
+            GeneradorArchivos.crearArchivoVendedores(3, "data/vendedores.txt");
             System.out.println("✅ Archivos generados exitosamente.");
         } catch (IOException e) {
             System.err.println("❌ Error al generar los archivos: " + e.getMessage());

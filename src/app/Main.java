@@ -83,6 +83,69 @@ public class Main {
             }
 
             System.out.println("✅ Reporte generado exitosamente: data/reporte_productos_vendidos.csv");
+
+            // --- REPORTE DE VENDEDORES ---
+            // 1. Leer vendedores: docNum -> nombre completo
+            Map<Long, String> vendedoresInfo = new HashMap<>();
+            try (BufferedReader br = new BufferedReader(new FileReader("data/vendedores.txt"))) {
+                String linea;
+                while ((linea = br.readLine()) != null) {
+                    String[] partes = linea.split(";");
+                    if (partes.length >= 4) {
+                        long docNum = Long.parseLong(partes[1]);
+                        String nombreCompleto = partes[2] + " " + partes[3];
+                        vendedoresInfo.put(docNum, nombreCompleto);
+                    }
+                }
+            }
+
+            // 2. Calcular total recaudado por vendedor
+            List<String[]> reporteVendedores = new ArrayList<>();
+            for (Map.Entry<Long, String> entry : vendedoresInfo.entrySet()) {
+                long docNum = entry.getKey();
+                String nombreCompleto = entry.getValue();
+                double totalRecaudado = 0.0;
+                File ventasFile = new File("data/ventas_" + docNum + ".txt");
+                if (ventasFile.exists()) {
+                    try (BufferedReader br = new BufferedReader(new FileReader(ventasFile))) {
+                        String linea;
+                        boolean firstLine = true;
+                        while ((linea = br.readLine()) != null) {
+                            if (firstLine) { firstLine = false; continue; }
+                            String[] partes = linea.split(";");
+                            if (partes.length >= 2) {
+                                String prodId = partes[0];
+                                int cantidad;
+                                try {
+                                    cantidad = Integer.parseInt(partes[1]);
+                                } catch (NumberFormatException e) {
+                                    continue;
+                                }
+                                String[] prodInfo = productosInfo.get(prodId);
+                                if (prodInfo != null) {
+                                    double precio = Double.parseDouble(prodInfo[1].replace(",", "."));
+                                    totalRecaudado += cantidad * precio;
+                                }
+                            }
+                        }
+                    }
+                }
+                reporteVendedores.add(new String[]{nombreCompleto, String.format("%.2f", totalRecaudado)});
+            }
+
+            // 3. Ordenar por total recaudado descendente
+            reporteVendedores.sort((a, b) -> Double.compare(Double.parseDouble(b[1].replace(",", ".")), Double.parseDouble(a[1].replace(",", "."))));
+
+            // 4. Escribir archivo de reporte CSV
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter("data/reporte_vendedores.csv"))) {
+                bw.write("Vendedor;TotalRecaudado");
+                bw.newLine();
+                for (String[] vendedor : reporteVendedores) {
+                    bw.write(vendedor[0] + ";" + vendedor[1]);
+                    bw.newLine();
+                }
+            }
+            System.out.println("✅ Reporte de vendedores generado exitosamente: data/reporte_vendedores.csv");
         } catch (Exception e) {
             System.err.println("❌ Error al generar el reporte: " + e.getMessage());
         }
