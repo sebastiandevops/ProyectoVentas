@@ -81,4 +81,63 @@ public class GeneradorArchivos {
             }
         }
     }
+
+    /**
+     * Genera un archivo de ventas pseudoaleatorio para un vendedor específico.
+     * @param randomSalesCount Cantidad de ventas a generar.
+     * @param name Nombre del vendedor.
+     * @param id Identificación del vendedor.
+     * @throws IOException Si ocurre un error de escritura.
+     */
+    public static void createSalesMenFile(int randomSalesCount, String name, long id) throws IOException {
+        Random rand = new Random();
+        String fileName = "data/ventas_" + id + ".txt";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            writer.write("CC;" + id + ";" + name);
+            writer.newLine();
+            for (int i = 1; i <= randomSalesCount; i++) {
+                String productId = "P" + (1 + rand.nextInt(PRODUCTOS.length));
+                int cantidadVendida = 1 + rand.nextInt(10);
+                writer.write(productId + ";" + cantidadVendida + ";");
+                writer.newLine();
+            }
+        }
+    }
+
+    /**
+     * Genera un archivo de productos pseudoaleatorio.
+     * @param productsCount Cantidad de productos a generar.
+     * @throws IOException Si ocurre un error de escritura.
+     */
+    public static void createProductsFile(int productsCount) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("data/productos.txt"))) {
+            Random rand = new Random();
+            for (int i = 1; i <= productsCount; i++) {
+                String id = "P" + i;
+                String nombre = PRODUCTOS[rand.nextInt(PRODUCTOS.length)];
+                double precio = 10 + rand.nextDouble() * 90;
+                writer.write(id + ";" + nombre + ";" + String.format("%.2f", precio));
+                writer.newLine();
+            }
+        }
+    }
+
+    /**
+     * Genera un archivo de información de vendedores pseudoaleatorio.
+     * @param salesmanCount Cantidad de vendedores a generar.
+     * @throws IOException Si ocurre un error de escritura.
+     */
+    public static void createSalesManInfoFile(int salesmanCount) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("data/vendedores.txt"))) {
+            Random rand = new Random();
+            for (int i = 0; i < salesmanCount; i++) {
+                String tipoDoc = "CC";
+                long docNum = 10000000 + rand.nextInt(90000000);
+                String nombre = NOMBRES[rand.nextInt(NOMBRES.length)];
+                String apellido = APELLIDOS[rand.nextInt(APELLIDOS.length)];
+                writer.write(tipoDoc + ";" + docNum + ";" + nombre + ";" + apellido);
+                writer.newLine();
+            }
+        }
+    }
 }
