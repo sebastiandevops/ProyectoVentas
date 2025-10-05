@@ -95,6 +95,9 @@ En esta entrega, se implementa la generación de archivos de prueba y el procesa
 - Reporte de vendedores con el total recaudado, ordenados de mayor a menor.
 - Mensajes claros de éxito y error en consola.
 
+## Novedades de la Tercera Entrega
+- Se agrega la carpeta `docs`, la cuál contiene los archivos [`conclusion.txt`](docs/conclusion.txt) y [`Proyecto_Ventas_Entrega_Final.docx`](docs/Proyecto_Ventas_Entrega_Final.docx)
+
 ---
 
 ## Notas
