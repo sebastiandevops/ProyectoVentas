@@ -1,0 +1,22 @@
+Resumen de lo aprendido y reflexión final del proyecto
+
+1. Lo aprendido durante el desarrollo del proyecto
+
+Durante el desarrollo de este proyecto fortalecimos habilidades fundamentales en programación orientada a objetos con Java, como la creación de clases, encapsulamiento, uso de colecciones y manejo de archivos. Aprendimos a organizar proyectos con buenas prácticas como la separación en paquetes (`modelo`, `util`, `app`), reutilización de código, y estructuración modular. También se profundizó en la lectura y escritura de archivos planos y CSV, en la automatización de tareas con datos pseudoaleatorios y en el uso de Git y GitHub para el control de versiones y colaboración.
+
+2. Posibles aplicaciones a nivel profesional
+
+Este tipo de proyectos es altamente aplicable en entornos profesionales donde se gestionan ventas, reportes o información distribuida en archivos. El conocimiento adquirido permite desarrollar soluciones para empresas que requieran procesar datos de ventas, generar reportes automáticos, o validar y transformar información masiva. Además, las competencias en Git, estructuración de proyectos y documentación técnica son esenciales para trabajar en equipo en entornos reales de desarrollo de software.
+
+3. Dificultades durante el desarrollo
+
+Entre los principales desafíos se destacaron:
+- La configuración inicial del entorno de desarrollo en Eclipse y problemas de ejecución relacionados con rutas y versiones de Java.
+- Coordinación de versiones del código y manejo de permisos en el repositorio compartido.
+- Validar que los archivos generados cumplieran con el formato requerido por el escenario del proyecto.
+- Aprender a trabajar de forma más estructurada en equipo, asignando responsabilidades y manteniendo una línea de desarrollo coherente.
+
+A pesar de las dificultades, el proyecto fue una valiosa oportunidad de aprendizaje colaborativo y técnico.
+
+Repositorio final del proyecto:  
+https://github.com/sebastiandevops/ProyectoVentas
