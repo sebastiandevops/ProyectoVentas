@@ -96,7 +96,7 @@ En esta entrega, se implementa la generación de archivos de prueba y el procesa
 - Mensajes claros de éxito y error en consola.
 
 ## Novedades de la Tercera Entrega
-- Se agrega la carpeta `docs`, la cuál contiene los archivos [`conclusion.txt`](docs/conclusion.txt) y [`Proyecto Ventas Entrega Final.pdf`](docs/Proyecto Ventas Entrega Final.pdf) con la conclusión del proyecto y el informe final respectivamente.
+- Se agrega la carpeta `docs`, la cuál contiene los archivos [`conclusion.txt`](docs/conclusion.txt) y [`Proyecto_Ventas_Entrega_Final.pdf`](docs/Proyecto_Ventas_Entrega_Final.pdf) con la conclusión del proyecto y el informe final respectivamente.
 
 ---
 
