@@ -14,6 +14,18 @@ En esta entrega, se implementa la generación de archivos de prueba y el procesa
 
 ---
 
+## Tabla de Contenido
+
+- [Descripción General](#descripción-general)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Ejecución del Proyecto](#ejecución-del-proyecto)
+- [Explicación de los Métodos Principales](#explicación-de-los-métodos-principales)
+- [Novedades de la Segunda Entrega](#novedades-de-la-segunda-entrega)
+- [Novedades de la Tercera Entrega](#novedades-de-la-tercera-entrega)
+- [Autores](#autores)
+
+---
+
 ## Estructura del Proyecto
 
 - [`src/app/GenerateInfoFiles.java`](src/app/GenerateInfoFiles.java): Clase principal que ejecuta la generación de archivos de datos de prueba (productos, vendedores y ventas).
@@ -97,6 +109,16 @@ En esta entrega, se implementa la generación de archivos de prueba y el procesa
 
 ## Novedades de la Tercera Entrega
 - Se agrega la carpeta `docs`, la cuál contiene los archivos [`conclusion.txt`](docs/conclusion.txt) y [`Proyecto_Ventas_Entrega_Final.pdf`](docs/Proyecto_Ventas_Entrega_Final.pdf) con la conclusión del proyecto y el informe final respectivamente.
+
+---
+
+## Autores
+
+- Isabel Cristina Madrigal Jaramillo
+- Sebastián Valencia Sierra
+- Eduar Jhayr Escuraina Hernandez
+- Jhefrey Nicolas Moreno Fernández
+- Diego Bentacur
 
 ---
 
